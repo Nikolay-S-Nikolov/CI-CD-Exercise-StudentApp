@@ -3,12 +3,6 @@ pipeline {
 
 
     stages {
-        stage('Checkout Code') {
-            steps {
-                echo 'Cloning repository...'
-                checkout scm
-            }
-        }
 
         stage('Install Dependencies') {
             steps {
@@ -36,6 +30,13 @@ pipeline {
                 bat 'npm test'
             }
         }
+        
+        stage('Deploy Application to Production') {
+            steps {
+                echo 'Deploying the application...'
+            }
+        }
+
     }
 
     post {
