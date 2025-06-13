@@ -27,8 +27,7 @@ pipeline {
             steps {
                 echo 'Starting the application in background...'
                 bat 'start /B npm start'
-            }
-            }
+            }            
         }
 
         stage('Run Tests') {
